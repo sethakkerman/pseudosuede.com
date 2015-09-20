@@ -1,0 +1,52 @@
+.isotope-item{z-index:2;}
+.isotope-hidden.isotope-item{pointer-events:none;z-index:1;}
+.isotope,
+.isotope .isotope-item{-webkit-transition-duration:0.8s;-moz-transition-duration:0.8s;-ms-transition-duration:0.8s;-o-transition-duration:0.8s;transition-duration:0.8s;}
+.isotope{-webkit-transition-property:height, width;-moz-transition-property:height, width;-ms-transition-property:height, width;-o-transition-property:height, width;transition-property:height, width;}
+.isotope .isotope-item{-webkit-transition-property:-webkit-transform, opacity;-moz-transition-property:-moz-transform, opacity;-ms-transition-property:-ms-transform, opacity;-o-transition-property:top, left, opacity;transition-property:transform, opacity;}
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition{-webkit-transition-duration:0s;-moz-transition-duration:0s;-ms-transition-duration:0s;-o-transition-duration:0s;transition-duration:0s;}
+html,
+body{height:100%;}
+#container_wrapper{border:0px solid #666;width:100%;margin:0em;padding:0em;}
+#container{border:0px solid #666;padding:0px;margin:0px;}
+.element{width:100%;height:auto;float:left;overflow:hidden;position:relative;color:#222;}
+.element .project_thumb_container{margin:5px 5px 30px 5px;text-align:left;max-width:400px;}
+.element .project_thumb_image{width:100%;height:auto;overflow:hidden;display:block;left:0em;max-width:400px;}
+.index_thumb{display:block;}
+.element .project_thumb_overlay{overflow:hidden;display:none;left:0em;top:0px;left:0px;position:absolute;padding:5px;}
+.element .project_thumb_image img, .element .project_thumb_overlay img{vertical-align:bottom;width:100%;height:auto;}
+.element .name{font-size:1.05em;margin:.5em 0em .4em 0em;transition:all 400ms linear;-moz-transition:all 400ms linear;-webkit-transition:all 400ms linear;-o-transition:all 400ms linear; font-family:"ff-tisa-sans-web-pro";-webkit-font-feature-settings: "liga" 1,"onum" 1;
+    -o-font-feature-settings: "liga" 1,"onum" 1;
+    -moz-font-feature-settings: "liga" 1,"onum" 1;
+    -ms-font-feature-settings: "liga" 1,"onum" 1;
+    font-feature-settings: "liga" 1,"onum" 1;font-weight:400;}
+.element .type{font-family:"ff-tisa-web-pro",Georgia, "Times New Roman", Times, serif;font-weight:400;font-style:italic;font-size:0.9em;margin-top:.4em;transition:all 400ms linear;-moz-transition:all 400ms linear;-webkit-transition:all 400ms linear;-o-transition:all 400ms linear;-webkit-font-feature-settings: "liga" 1,"onum" 1;
+    -o-font-feature-settings: "liga" 1,"onum" 1;
+    -moz-font-feature-settings: "liga" 1,"onum" 1;
+    -ms-font-feature-settings: "liga" 1,"onum" 1;
+    font-feature-settings: "liga" 1,"onum" 1;}
+.clickable .element:hover{cursor:pointer;}
+.clickable .element:hover p{color:#000000;transition:all 400ms linear;-moz-transition:all 400ms linear;-webkit-transition:all 400ms linear;-o-transition:all 400ms linear;}
+.element .project_thumb hr{color:#999999;background-color:#999999;height:1px;border:none;margin:0em;}
+#options{padding-top:15px;top:0em;margin:0px 5px 0px 5px;float:right;}
+#options p{font-size:12px;float:left;text-align:left;color:#999999;letter-spacing:1px;margin:.65em 0em 0em 0em;font-family:"ff-tisa-sans-web-pro",trebuchet ms, helvetica, arial, sans-serif;vertical-align:baseline;border-right:1px solid #999999;padding-right:13px;font-weight:700;font-style:normal;-webkit-font-feature-settings: "liga" 1,"onum" 1;
+    -o-font-feature-settings: "liga" 1,"onum" 1;
+    -moz-font-feature-settings: "liga" 1,"onum" 1;
+    -ms-font-feature-settings: "liga" 1,"onum" 1;
+    font-feature-settings: "liga" 1,"onum" 1;}
+#options ul{margin:0;list-style:none;padding:0px 0px 0px 73px;}
+#options ul ul{margin-left:1.5em;}
+#options li{float:left;margin-bottom:0.2em;padding:0em 0.5em;}
+#options li a{display:block;padding:0.4em 0em;color:#999999;font-weight:400;border-bottom:1px #FFFFFF dotted;font-family:"ff-tisa-web-pro",Georgia, "Times New Roman", Times, serif;font-style:italic;font-size:14px;vertical-align:baseline;-webkit-font-feature-settings: "liga" 1,"onum" 1;
+    -o-font-feature-settings: "liga" 1,"onum" 1;
+    -moz-font-feature-settings: "liga" 1,"onum" 1;
+    -ms-font-feature-settings: "liga" 1,"onum" 1;
+    font-feature-settings: "liga" 1,"onum" 1;}
+#options li a:hover{color:#666666;border-bottom-color:#666666;}
+#options li a:active{color:#000000;}
+#options li a{}
+#options li:first-child a{}
+#options li:last-child{padding-right:0em;}
+#options li a.selected{border-bottom-color:#333333;color:#333333;}

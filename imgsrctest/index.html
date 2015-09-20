@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body style="margin:0em;">
+
+<img
+    srcset="
+    	small.jpg 400w,
+       	medium.jpg 800w,
+       	full.jpg 1440w"
+   	sizes="
+    	(max-width: 480px) 75vw,
+       	(min-width: 960px) 100vw,
+       	50vw"
+   	src="full.jpg"
+ 	alt="image alt"
+  	title="image title">
+    
+    <div style="width:50%; margin:0 auto; overflow:hidden;">
+    <img
+	src="full.jpg"
+    srcset="
+    	small.jpg 400w,
+       	medium.jpg 800w,
+       	full.jpg 1440w"
+   	sizes="
+    	(max-width: 480px) 75vw,
+       	(min-width: 960px) 100vw,
+       	100vw"
+ 	alt="image alt"
+  	title="image title">
+    </div>
+</body>
+</html>

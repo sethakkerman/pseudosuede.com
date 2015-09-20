@@ -1,0 +1,61 @@
+# Other Folders #
+2015running/
+Tests as Screen Captures/
+working_files/
+dearadler/
+dearanthropologie/
+dearCB2/
+dearkinfolk/
+dearnike/
+dearkinfolk/
+dearpapersource/
+dearrestorationhardware/
+dearstarbucks/
+dearteamtattly/
+dhd/
+drum_machine/
+elrn/
+gridtest/
+holidays2011/
+holidays2012/
+hotsteppers/
+imgrsctest/
+magic/
+making_more/
+mooho/
+navtest/
+navtest2/
+navtest3/
+old_drum_machine/
+olympics/
+picturefill_test/
+running/
+runningtest/
+runningtest2/
+runningvideo/
+screenprint/
+ssis/
+svgizza/
+testing/
+threejs/
+wearegettingmarried!/
+weather/
+beta/
+
+# SCSSC #
+*.scssc
+assets/styles/.sass-cache/
+assets/styles/.sass-cache/*
+
+# Packages #
+.dmg
+.zip
+.tar
+.rar
+
+# OS Generated Files #
+config.codekit
+_notes/
+.DS_Store*
+Thumbs.db
+.DS_Store

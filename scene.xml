@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quiz>
+
+<setQuestion type="radio">
+<img>js/moohoQuiz/scene6.jpg</img>
+<question>
+Is this what an example of the question looks like?
+</question>
+<ex AS="1">Yes</ex>
+<ex>No</ex>
+<correct>
+This is an example of what the question looks like!
+</correct>
+<incorrect>No. This is not.
+</incorrect>
+</setQuestion>
+
+
+</quiz>
