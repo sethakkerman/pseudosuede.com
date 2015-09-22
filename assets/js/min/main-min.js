@@ -1,0 +1,1 @@
+!function(t,$,r){"use strict";navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)||$(function(){$("img").mouseover(function(){var t=$(this).attr("src").replace(".png","_o.png");$(this).attr("src",t)}).mouseout(function(){var t=$(this).attr("src").replace("_o.png",".png");$(this).attr("src",t)})})}(window,jQuery);

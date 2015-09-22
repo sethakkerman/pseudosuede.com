@@ -1,0 +1,136 @@
+/*
+Well hello there! Thanks for taking a look around. If you are curious about the SCSS document feeding this main.css, just swap out the suffix in your browser's address bar.
+*/
+
+// =======================================================================
+// CSS by Seth Akkerman
+// Hugely inspired by the organizational skills of Elliot Jay Stocks
+// Last updated: 06/21/2015
+// =======================================================================
+// Contents:
+// 01 Meyer Reset
+// 02 SASS Mixins
+// 03 SASS Variables
+// 04 Typography
+//	- Rendering
+//	- Families
+//	- Headings
+//	- Links
+//	- Paragraphs, Lists, Other
+// 05 Basic Layout
+// =======================================================================
+
+// =========================
+//	01 Meyer Reset
+// =========================
+
+@import "meyer-reset.scss";
+
+// =========================
+//	02 SASS Mixins
+// =========================
+
+// =========================
+//	03 SASS Variables
+// =========================
+
+$width-medium: 56.250em; /* 900px / 16 = 56.250em */
+$font-sans: "ff-tisa-sans-web-pro","Helvetica Neue",Helvetica,sans-serif;
+$font-serif: "ff-tisa-web-pro",Georgia,serif;
+
+// =========================
+//	04 Typography
+// =========================
+
+/* There seems to be a bug rendering fonts in mozilla on macs. The moz-osx css line fixed the visual issue. This may only be necessary when there is only one font served from typekit and the weights are specified by numerical values. */
+html { 
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body { 
+	font:400 100%/1.60 $font-sans;
+	color:rgba(153,153,153,1.0);
+	text-rendering:optimizeLegibility;
+}
+
+p, ul {
+	font-size:100%;
+	color:rgba(97,97,97,1.0);
+	padding:0 .75em 1.5em .75em;
+	letter-spacing:.125px;
+	a {
+		text-decoration:none;
+		-webkit-transition: all .2s ease-in-out;
+  		-moz-transition: all .2s ease-in-out;
+  		-o-transition: all .2s ease-in-out;
+  		transition: all .2s ease-in-out; 
+		color:rgba(158,158,158,1.0);
+		&:hover {
+			color:rgba(255,255,255,1.0);	
+		}
+		html.no-touch &:hover {
+			color:rgba(255,255,255,1.0);	
+		}	
+	}
+	@media screen and (min-width: $width-medium) { 
+		padding:0 0 1.5em 0;
+	}
+}
+
+// =========================
+//	05 Basic Layout
+// =========================
+
+* { 
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+} /* Apply a natural box layout model to all elements see http://paulirish.com/2012/box-sizing-border-box-ftw */
+
+div,
+article,
+section,
+header,
+footer,
+nav,
+figure,
+li { position:relative; } /* For absolutely positioning elements within containers  */
+
+html {
+	background: rgba(43,45,45,1.0); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #f15b22 0%, #73be43 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f15b22), color-stop(100%,#73be43)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #f15b22 0%,#73be43 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #f15b22 0%,#73be43 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #f15b22 0%,#73be43 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #f15b22 0%,#73be43 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f15b22', endColorstr='#73be43',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	width:100%;
+	height:100%;
+}
+
+body { padding:0; margin:0;	background-color:rgba(43,45,45,1.0); width:100%; height:100%; }
+
+header { padding-bottom:1em; }
+
+img { width:100%; height:auto; display:block; } /* img { display:block; } This is to get rid of the weird, tiny 4px white space between the images horizontally */
+
+.main-wrapper {
+	display:table;
+	width:100%;
+	height:100%;
+	max-width:40em;
+	position:absolute;
+	text-align:center;
+	margin:0 auto;
+	padding:0 1em;
+	left:0;
+	right:0;
+	@media screen and (min-width: $width-medium) { 
+		padding:0;
+	}
+}
+
+.content-wrapper { display:table-cell; vertical-align:middle; text-align:center; }
+
