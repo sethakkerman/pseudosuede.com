@@ -99,13 +99,6 @@ li { position:relative; } /* For absolutely positioning elements within containe
 
 html {
 	background: rgba(43,45,45,1.0); /* Old browsers */
-	background: -moz-linear-gradient(-45deg,  #f15b22 0%, #73be43 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f15b22), color-stop(100%,#73be43)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(-45deg,  #f15b22 0%,#73be43 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(-45deg,  #f15b22 0%,#73be43 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(-45deg,  #f15b22 0%,#73be43 100%); /* IE10+ */
-	background: linear-gradient(135deg,  #f15b22 0%,#73be43 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f15b22', endColorstr='#73be43',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	width:100%;
 	height:100%;
 }
@@ -131,6 +124,8 @@ img { width:100%; height:auto; display:block; } /* img { display:block; } This i
 		padding:0;
 	}
 }
+
+.logo { cursor:pointer; }
 
 .content-wrapper { display:table-cell; vertical-align:middle; text-align:center; }
 
