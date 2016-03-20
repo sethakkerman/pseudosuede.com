@@ -33,21 +33,22 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* 900px / 16 = 56.250em */
+/* 1000px / 16 = 56.250em */
+/* 600px / 16 = 31.250em */
 /* There seems to be a bug rendering fonts in mozilla on macs. The moz-osx css line fixed the visual issue. This may only be necessary when there is only one font served from typekit and the weights are specified by numerical values. */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 body {
-  font: 400 100%/1.6 "ff-tisa-sans-web-pro", "Helvetica Neue", Helvetica, sans-serif;
+  font: 400 100%/1.6 "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   color: #999999;
   text-rendering: optimizeLegibility; }
 
 p, ul {
   font-size: 100%;
   color: #616161;
-  padding: 0 .75em 1.5em .75em;
+  padding: 0 1.25em 1em 1.25em;
   letter-spacing: .125px; }
   p a, ul a {
     text-decoration: none;
@@ -60,9 +61,9 @@ p, ul {
       color: white; }
     html.no-touch p a:hover, html.no-touch ul a:hover {
       color: white; }
-  @media screen and (min-width: 56.25em) {
+  @media screen and (min-width: 62.5em) {
     p, ul {
-      padding: 0 0 1.5em 0; } }
+      padding: 0 0 1em 0; } }
 
 * {
   -moz-box-sizing: border-box;
@@ -83,9 +84,7 @@ li {
 /* For absolutely positioning elements within containers  */
 html {
   background: #2b2d2d;
-  /* Old browsers */
-  width: 100%;
-  height: 100%; }
+  /* Old browsers */ }
 
 body {
   padding: 0;
@@ -95,33 +94,113 @@ body {
   height: 100%; }
 
 header {
-  padding-bottom: 1em; }
+  width: 100%;
+  max-width: 40em;
+  margin: 0 auto;
+  margin-top: 2.75em;
+  margin-bottom: 1.75em; }
+  @media screen and (min-width: 62.5em) {
+    header {
+      margin-top: 4em;
+      margin-bottom: 3em; } }
 
 img {
   width: 100%;
   height: auto;
-  display: block; }
+  display: block;
+  cursor: pointer; }
+  img.logo {
+    padding: 0 1em 2em 1em; }
+    @media screen and (min-width: 62.5em) {
+      img.logo {
+        padding: 1em 0; } }
 
 /* img { display:block; } This is to get rid of the weird, tiny 4px white space between the images horizontally */
 .main-wrapper {
-  display: table;
   width: 100%;
-  height: 100%;
-  max-width: 40em;
-  position: relative;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0 1em;
-  left: 0;
-  right: 0; }
-  @media screen and (min-width: 56.25em) {
+  max-width: 70em;
+  min-width: 320px;
+  text-align: left;
+  margin: 0 auto; }
+  @media screen and (min-width: 37.5em) {
     .main-wrapper {
-      padding: 0; } }
+      text-align: center;
+      width: 80%; } }
 
-.logo {
-  cursor: pointer; }
+.project-wrapper {
+  margin: 2em 0;
+  cursor: pointer;
+  text-align: left;
+  -webkit-transition: all .15s ease-in-out;
+  -moz-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out; }
+  .project-wrapper:before {
+    content: '';
+    background-color: rgba(20, 20, 20, 0.875);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out; }
+  .project-wrapper:last-child {
+    margin-bottom: 0; }
 
-.content-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center; }
+.light-image:before {
+  background-color: rgba(20, 20, 20, 0.96); }
+
+.experiment-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.25em;
+  -webkit-transition: all .15s ease-in-out;
+  -moz-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out; }
+  .experiment-info p {
+    padding: 0;
+    color: #c8c8c8; }
+    .experiment-info p.experiment-question {
+      color: #646464; }
+  @media screen and (min-width: 37.5em) {
+    .experiment-info {
+      padding: 2em; } }
+  @media screen and (min-width: 62.5em) {
+    .experiment-info {
+      padding: 3em; } }
+
+.experiment-number {
+  letter-spacing: .075em; }
+
+.experiment-title {
+  font-size: 200%;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.25em; }
+  @media screen and (min-width: 62.5em) {
+    .experiment-title {
+      font-size: 275%; } }
+
+.experiment-question {
+  display: none;
+  font-size: 130%;
+  margin-top: 1.25em;
+  line-height: 1.6; }
+  @media screen and (min-width: 37.5em) {
+    .experiment-question {
+      display: block; } }
+  @media screen and (min-width: 62.5em) {
+    .experiment-question {
+      font-size: 200%;
+      margin-top: 2.5em;
+      line-height: 1.6; } }
+
+html.no-touch .project-wrapper:hover .experiment-info {
+  opacity: 0; }
+html.no-touch .project-wrapper:hover:before {
+  background-color: rgba(20, 20, 20, 0); }
