@@ -33,37 +33,37 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* 1000px / 16 = 56.250em */
-/* 600px / 16 = 31.250em */
+/* 800px / 16 = 50em */
+/* 320px / 16 = 20em */
 /* There seems to be a bug rendering fonts in mozilla on macs. The moz-osx css line fixed the visual issue. This may only be necessary when there is only one font served from typekit and the weights are specified by numerical values. */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 body {
-  font: 400 100%/1.6 "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-  color: #999999;
+  font: 400 100%/1.5 "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  color: #9e9e9e;
   text-rendering: optimizeLegibility; }
 
 p, ul {
-  font-size: 100%;
-  color: #616161;
-  padding: 0 1.25em 1em 1.25em;
-  letter-spacing: .125px; }
+  font-size: 100%; }
   p a, ul a {
     text-decoration: none;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-    color: #9e9e9e; }
-    p a:hover, ul a:hover {
-      color: white; }
-    html.no-touch p a:hover, html.no-touch ul a:hover {
-      color: white; }
-  @media screen and (min-width: 62.5em) {
-    p, ul {
-      padding: 0 0 1em 0; } }
+    /*html.no-touch &:hover {
+    	color:rgba(255,255,255,1.0);	
+    }*/ }
+
+footer p {
+  color: #565656;
+  font-size: 87.5%; }
+footer a {
+  color: #649752;
+  -webkit-transition: all .15s ease-in-out;
+  -moz-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out; }
+  footer a:hover {
+    color: white; }
 
 * {
   -moz-box-sizing: border-box;
@@ -83,124 +83,123 @@ li {
 
 /* For absolutely positioning elements within containers  */
 html {
-  background: #2b2d2d;
-  /* Old browsers */ }
+  background: #282828; }
 
 body {
   padding: 0;
   margin: 0;
-  background-color: #2b2d2d;
   width: 100%;
   height: 100%; }
 
 header {
-  width: 100%;
-  max-width: 40em;
-  margin: 0 auto;
-  margin-top: 2.75em;
-  margin-bottom: 1.75em; }
-  @media screen and (min-width: 62.5em) {
-    header {
-      margin-top: 4em;
-      margin-bottom: 3em; } }
+  width: 100%; }
 
 img {
   width: 100%;
   height: auto;
-  display: block;
-  cursor: pointer; }
+  display: block; }
   img.logo {
-    padding: 0 1em 2em 1em; }
-    @media screen and (min-width: 62.5em) {
-      img.logo {
-        padding: 1em 0; } }
+    width: 183px; }
 
 /* img { display:block; } This is to get rid of the weird, tiny 4px white space between the images horizontally */
-.main-wrapper {
+.outer-wrapper {
   width: 100%;
-  max-width: 70em;
-  min-width: 320px;
+  max-width: 50em;
+  min-width: 20em;
   text-align: left;
   margin: 0 auto; }
-  @media screen and (min-width: 37.5em) {
-    .main-wrapper {
-      text-align: center;
+  @media screen and (min-width: 20em) {
+    .outer-wrapper {
       width: 80%; } }
 
-.project-wrapper {
-  margin: 2em 0;
-  cursor: pointer;
-  text-align: left;
-  -webkit-transition: all .15s ease-in-out;
-  -moz-transition: all .15s ease-in-out;
-  -o-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out; }
-  .project-wrapper:before {
-    content: '';
-    background-color: rgba(20, 20, 20, 0.875);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all .15s ease-in-out;
-    -moz-transition: all .15s ease-in-out;
-    -o-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out; }
-  .project-wrapper:last-child {
-    margin-bottom: 0; }
+.question {
+  border-top: 1px solid #212121;
+  cursor: pointer; }
+  .question:last-child {
+    border-bottom: 1px solid #212121; }
+  .question a {
+    display: block;
+    overflow: hidden; }
+    .question a:hover {
+      background-color: #2d2d2d; }
 
-.light-image:before {
-  background-color: rgba(20, 20, 20, 0.96); }
-
-.experiment-info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1.25em;
-  -webkit-transition: all .15s ease-in-out;
-  -moz-transition: all .15s ease-in-out;
-  -o-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out; }
-  .experiment-info p {
-    padding: 0;
-    color: #c8c8c8; }
-    .experiment-info p.experiment-question {
-      color: #646464; }
-  @media screen and (min-width: 37.5em) {
-    .experiment-info {
-      padding: 2em; } }
-  @media screen and (min-width: 62.5em) {
-    .experiment-info {
-      padding: 3em; } }
-
-.experiment-number {
-  letter-spacing: .075em; }
-
-.experiment-title {
-  font-size: 200%;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-top: 0.25em; }
-  @media screen and (min-width: 62.5em) {
-    .experiment-title {
-      font-size: 275%; } }
-
-.experiment-question {
-  display: none;
-  font-size: 130%;
-  margin-top: 1.25em;
-  line-height: 1.6; }
-  @media screen and (min-width: 37.5em) {
-    .experiment-question {
-      display: block; } }
-  @media screen and (min-width: 62.5em) {
-    .experiment-question {
-      font-size: 200%;
-      margin-top: 2.5em;
-      line-height: 1.6; } }
-
-html.no-touch .project-wrapper:hover .experiment-info {
-  opacity: 0; }
-html.no-touch .project-wrapper:hover:before {
-  background-color: rgba(20, 20, 20, 0); }
+/*.project-wrapper { 
+	margin:2em 0; 
+	cursor:pointer;
+	text-align:left;
+	-webkit-transition: all .15s ease-in-out;
+  	-moz-transition: all .15s ease-in-out;
+  	-o-transition: all .15s ease-in-out;
+  	transition: all .15s ease-in-out;
+	&:before { 
+		content:'';
+		background-color:rgba(20,20,20,0.875);
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height: 100%; 						
+		-webkit-transition: all .15s ease-in-out;
+  		-moz-transition: all .15s ease-in-out;
+  		-o-transition: all .15s ease-in-out;
+  		transition: all .15s ease-in-out;
+	}
+	&:last-child { margin-bottom:0; }
+}
+.light-image {
+	&:before {
+		background-color:rgba(20,20,20,0.96);
+	}
+}*/
+/*.experiment-info { 
+	position:absolute;
+	top:0;
+	left:0;
+	padding:1.25em;
+	-webkit-transition: all .15s ease-in-out;
+  	-moz-transition: all .15s ease-in-out;
+  	-o-transition: all .15s ease-in-out;
+  	transition: all .15s ease-in-out;
+	p { padding:0; color:rgba(200,200,200,1.0);
+		&.experiment-question { color:rgba(100,100,100,1.0); }
+	}
+	@media screen and (min-width: $width-small) { 
+		padding: 2em;
+	}
+	@media screen and (min-width: $width-medium) { 
+		padding: 3em;
+	}
+}*/
+/*.experiment-number {
+font-family: OpenSans, sans-serif;
+font-size: 14px;
+color: #565656;
+letter-spacing: 1px;
+line-height: 19px; }
+.experiment-title { font-size: 200%; font-weight:700; line-height:1.2; margin-top:0.25em; 
+	@media screen and (min-width: $width-medium) {
+		font-size: 275%; 
+	}
+}*/
+/*.experiment-question { 
+	display:none;
+	font-size:130%;
+	margin-top:1.25em;
+	line-height:1.6;
+	@media screen and (min-width: $width-small) {
+		display:block;
+	}
+	@media screen and (min-width: $width-medium) {
+		font-size:200%;
+		margin-top:2.5em;
+		line-height:1.6;
+	}
+}*/
+/*html.no-touch {
+	.project-wrapper {
+		&:hover {
+			.experiment-info { opacity:0; }
+			&:before { background-color:rgba(20,20,20,0.0); } 
+		}
+	}
+}*/

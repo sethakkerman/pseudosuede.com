@@ -5,7 +5,7 @@ Well hello there! Thanks for taking a look around. If you are curious about the 
 // =======================================================================
 // CSS by Seth Akkerman
 // Hugely inspired by the organizational skills of Elliot Jay Stocks
-// Last updated: 06/21/2015
+// Last updated: 07/02/2016
 // =======================================================================
 // Contents:
 // 01 Meyer Reset
@@ -30,14 +30,27 @@ Well hello there! Thanks for taking a look around. If you are curious about the 
 //	02 SASS Mixins
 // =========================
 
+@mixin link-hover-transition {
+	-webkit-transition: all .15s ease-in-out;
+  	-moz-transition: all .15s ease-in-out;
+  	-o-transition: all .15s ease-in-out;
+  	transition: all .15s ease-in-out; 
+}
+
 // =========================
 //	03 SASS Variables
 // =========================
 
-$width-medium: 62.50em; /* 1000px / 16 = 56.250em */
-$width-small: 37.50em; /* 600px / 16 = 31.250em */
+$width-medium: 50em; /* 800px / 16 = 50em */
+$width-small: 20em; /* 320px / 16 = 20em */
+
+$background-color: rgba(40,40,40,1.0);
+$border-color: rgba(33,33,33,1.0);
+
 $font-sans: "Open Sans","Helvetica Neue",Helvetica,sans-serif;
-$background-color: rgba(43,45,45,1.0);
+$main-type-color: rgba(158,158,158,1.0);
+$darker-type-color: rgba(86,86,86,1.0);
+$main-link-color: rgba(100,151,82,100);
 
 // =========================
 //	04 Typography
@@ -50,32 +63,32 @@ html {
 }
 
 body { 
-	font:400 100%/1.60 $font-sans;
-	color:rgba(153,153,153,1.0);
+	font:400 100%/1.5 $font-sans;
+	color:$main-type-color;
 	text-rendering:optimizeLegibility;
 }
 
 p, ul {
 	font-size:100%;
-	color:rgba(97,97,97,1.0);
-	padding:0 1.25em 1em 1.25em;
-	letter-spacing:.125px;
 	a {
 		text-decoration:none;
-		-webkit-transition: all .2s ease-in-out;
-  		-moz-transition: all .2s ease-in-out;
-  		-o-transition: all .2s ease-in-out;
-  		transition: all .2s ease-in-out; 
-		color:rgba(158,158,158,1.0);
-		&:hover {
+		/*html.no-touch &:hover {
 			color:rgba(255,255,255,1.0);	
-		}
-		html.no-touch &:hover {
-			color:rgba(255,255,255,1.0);	
-		}	
+		}*/	
 	}
 	@media screen and (min-width: $width-medium) { 
-		padding:0 0 1em 0;
+		
+	}
+}
+
+footer {
+	p { color: $darker-type-color; font-size: 87.5%; }
+	a {
+		color:$main-link-color;
+		@include link-hover-transition;
+	 	&:hover {
+			color:rgba(255,255,255,1.0);	
+		}
 	}
 }
 
@@ -83,11 +96,8 @@ p, ul {
 //	05 Basic Layout
 // =========================
 
-* { 
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	box-sizing:border-box;
-} /* Apply a natural box layout model to all elements see http://paulirish.com/2012/box-sizing-border-box-ftw */
+* { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
+/* Apply a natural box layout model to all elements see http://paulirish.com/2012/box-sizing-border-box-ftw */
 
 div,
 article,
@@ -96,47 +106,64 @@ header,
 footer,
 nav,
 figure,
-li { position:relative; } /* For absolutely positioning elements within containers  */
+li { position:relative; }
+/* For absolutely positioning elements within containers  */
 
 html {
-	background: $background-color; /* Old browsers */
+	background: $background-color;
 }
 
-body { padding:0; margin:0;	background-color:rgba(43,45,45,1.0); width:100%; height:100%; }
+body { padding:0; margin:0; width:100%; height:100%; }
 
-header { width:100%; max-width:40em; margin:0 auto; margin-top:2.75em; margin-bottom:1.75em; 
+header { width:100%; 
 	@media screen and (min-width: $width-medium) {
-		margin-top:4em; margin-bottom:3em;
+		
 	}
 }
 
-img { width:100%; height:auto; display:block; cursor:pointer; 
-	&.logo { padding:0 1em 2em 1em;
+img { width:100%; height:auto; display:block;
+	&.logo { 
+		width:183px;
 		@media screen and (min-width: $width-medium) { 
-			padding:1em 0; 
+
 		}
 	}
 	&.project-image {  }
 }
 /* img { display:block; } This is to get rid of the weird, tiny 4px white space between the images horizontally */
 
-.main-wrapper {
+.outer-wrapper {
 	width:100%;
-	max-width:70em;
-	min-width:320px;
+	max-width:$width-medium;
+	min-width:$width-small;
 	text-align:left;
 	margin:0 auto;
 	@media screen and (min-width: $width-small) {
-		text-align:center;
 		width:80%;
 	}
 	@media screen and (min-width: $width-medium) { 
 	}
 }
 
-.content-wrapper { }
+.main-content {  }
 
-.project-wrapper { 
+
+
+.question {
+	border-top: 1px solid $border-color;
+	cursor:pointer;
+	&:last-child { border-bottom: 1px solid $border-color;}
+	a {
+		display:block;
+		overflow:hidden;	
+		&:hover {
+		background-color: lighten($background-color, 2);	
+		}
+	}
+}
+
+
+/*.project-wrapper { 
 	margin:2em 0; 
 	cursor:pointer;
 	text-align:left;
@@ -163,9 +190,9 @@ img { width:100%; height:auto; display:block; cursor:pointer;
 	&:before {
 		background-color:rgba(20,20,20,0.96);
 	}
-}
+}*/
 
-.experiment-info { 
+/*.experiment-info { 
 	position:absolute;
 	top:0;
 	left:0;
@@ -183,15 +210,20 @@ img { width:100%; height:auto; display:block; cursor:pointer;
 	@media screen and (min-width: $width-medium) { 
 		padding: 3em;
 	}
-}
+}*/
 
-.experiment-number { letter-spacing:.075em; }
+/*.experiment-number {
+font-family: OpenSans, sans-serif;
+font-size: 14px;
+color: #565656;
+letter-spacing: 1px;
+line-height: 19px; }
 .experiment-title { font-size: 200%; font-weight:700; line-height:1.2; margin-top:0.25em; 
 	@media screen and (min-width: $width-medium) {
 		font-size: 275%; 
 	}
-}
-.experiment-question { 
+}*/
+/*.experiment-question { 
 	display:none;
 	font-size:130%;
 	margin-top:1.25em;
@@ -204,14 +236,14 @@ img { width:100%; height:auto; display:block; cursor:pointer;
 		margin-top:2.5em;
 		line-height:1.6;
 	}
-}
+}*/
 
-html.no-touch {
+/*html.no-touch {
 	.project-wrapper {
 		&:hover {
 			.experiment-info { opacity:0; }
 			&:before { background-color:rgba(20,20,20,0.0); } 
 		}
 	}
-}
+}*/
 
