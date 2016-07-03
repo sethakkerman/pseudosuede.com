@@ -56,11 +56,11 @@ $main-link-color: rgba(100,151,82,100);
 //	04 Typography
 // =========================
 
-/* There seems to be a bug rendering fonts in mozilla on macs. The moz-osx css line fixed the visual issue. This may only be necessary when there is only one font served from typekit and the weights are specified by numerical values. */
 html { 
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+/* There seems to be a bug rendering fonts in mozilla on macs. The moz-osx css line fixed the visual issue. This may only be necessary when there is only one font served from typekit and the weights are specified by numerical values. */
 
 body { 
 	font:400 100%/1.5 $font-sans;
@@ -82,25 +82,32 @@ h1 {
 	max-width:30em;
 }
 
-p, ul {
+p, ul, ol {
 	font-size:100%;
 	margin-bottom:1em;
-	.experiment-number { color: $darker-type-color; letter-spacing: 2px; font-size: 87.5%; margin-bottom:4px; }
-	.experiment-keywords { color: $darker-type-color; font-size: 87.5%; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:0em;  }
+	max-width:37em;
+	&.experiment-number { color: $darker-type-color; letter-spacing: 1.5px; font-size: 87.5%; margin-bottom:4px; }
+	&.article-header { color: $darker-type-color; letter-spacing: 1.5px; font-size: 87.5%; margin-bottom:11px; text-transform:uppercase; }
+	&.experiment-keywords { color: $darker-type-color; font-size: 87.5%; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:0; }
 	a {
+		color:$main-link-color;
 		text-decoration:none;
-		/*html.no-touch &:hover {
+		html.no-touch &:hover {
 			color:rgba(255,255,255,1.0);	
-		}*/	
+		}	
 	}
 }
+
+article p:last-child, article ol:last-child { margin-bottom:0; }
+
+ol { list-style-type:decimal; margin-left:1em; }
 
 footer {
 	p { color: $darker-type-color; font-size: 87.5%; }
 	a {
 		color:$main-link-color;
 		@include link-hover-transition;
-	 	&:hover {
+	 	html.no-touch &:hover {
 			color:rgba(255,255,255,1.0);	
 		}
 	}
@@ -136,9 +143,11 @@ header, footer { width:100%; padding:27px 20px; margin:0;
 	}
 }
 
-img { width:100%; height:auto; display:block;
+img { width:100%; height:auto; display:block; margin-bottom:1em; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.15);
 	&.logo { 
 		width:183px;
+		margin-bottom:0;
+		box-shadow: none;
 		@media screen and (min-width: $width-medium) { 
 
 		}
@@ -159,24 +168,30 @@ img { width:100%; height:auto; display:block;
 	}
 }
 
-.main-content {  }
+.question-list { max-width:100%; }
 
 .question {
 	border-top: 1px solid $border-color;
 	cursor:pointer;
-	&:last-child { border-bottom: 1px solid $border-color;}
+	&:last-child { border-bottom: 1px solid $border-color; }
 	a {
 		display:block;
 		overflow:hidden;	
 		padding:34px 20px;
 		@include link-hover-transition;
-		&:hover {
-		background-color: lighten($background-color, 2);
+		html.no-touch &:hover {
+			background-color: lighten($background-color, 2);
 		}
 	}
 	@media screen and (min-width: $width-medium) { 
 	
 	}
+}
+
+article {
+	border-top: 1px solid $border-color;
+	padding:34px 20px;
+	&:last-child { border-bottom: 1px solid $border-color; }
 }
 
 
