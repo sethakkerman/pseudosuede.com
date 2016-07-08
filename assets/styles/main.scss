@@ -92,6 +92,7 @@ p, ul, ol {
 	a {
 		color:$main-link-color;
 		text-decoration:none;
+		@include link-hover-transition;
 		html.no-touch &:hover {
 			color:rgba(255,255,255,1.0);	
 		}	
@@ -100,13 +101,11 @@ p, ul, ol {
 
 article p:last-child, article ol:last-child { margin-bottom:0; }
 
-ol, ul { padding-left:20px; }
+ol, ul { margin-left:1.4em; }
+/* margin-left 1.4 makes it so at least in Safari, the numbers don't extend past the bounding box to the left. The ol's don't left align as well as I would like in Chrome or Firefox but I need to satisfy the Safari issue. */
 
 ul { list-style:disc; }
 ol { list-style:decimal;}
-
-ul li { list-style:disc; }
-ol li { list-style:decimal; }
 
 footer {
 	p { color: $darker-type-color; font-size: 87.5%; }
@@ -184,7 +183,7 @@ img + p {
 	}
 }
 
-.question-list { max-width:100%; padding-left: 0; list-style:none; }
+.question-list { max-width:100%; padding-left: 0; list-style:none; margin-left:0; }
 
 .question {
 	border-top: 1px solid $border-color;
