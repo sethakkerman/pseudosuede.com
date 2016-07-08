@@ -89,9 +89,20 @@ p, ul, ol {
 article p:last-child, article ol:last-child {
   margin-bottom: 0; }
 
+ol, ul {
+  padding-left: 20px; }
+
+ul {
+  list-style: disc; }
+
 ol {
-  list-style-type: decimal;
-  margin-left: 1em; }
+  list-style: decimal; }
+
+ul li {
+  list-style: disc; }
+
+ol li {
+  list-style: decimal; }
 
 footer p {
   color: #565656;
@@ -171,7 +182,9 @@ img + p {
   margin: 0 auto; }
 
 .question-list {
-  max-width: 100%; }
+  max-width: 100%;
+  padding-left: 0;
+  list-style: none; }
 
 .question {
   border-top: 1px solid #212121;

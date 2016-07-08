@@ -100,7 +100,13 @@ p, ul, ol {
 
 article p:last-child, article ol:last-child { margin-bottom:0; }
 
-ol { list-style-type:decimal; margin-left:1em; }
+ol, ul { padding-left:20px; }
+
+ul { list-style:disc; }
+ol { list-style:decimal;}
+
+ul li { list-style:disc; }
+ol li { list-style:decimal; }
 
 footer {
 	p { color: $darker-type-color; font-size: 87.5%; }
@@ -178,7 +184,7 @@ img + p {
 	}
 }
 
-.question-list { max-width:100%; }
+.question-list { max-width:100%; padding-left: 0; list-style:none; }
 
 .question {
 	border-top: 1px solid $border-color;
